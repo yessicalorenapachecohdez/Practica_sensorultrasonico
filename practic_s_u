@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "eevee 27",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -334.52, "left": -258.35, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -434.09, "left": -84.92, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -292.94,
+      "left": 112.54,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic1:VCC", "esp:VIN", "red", [ "v221.27", "h-269", "v-59.5" ] ],
+    [ "ultrasonic1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "esp:D18", "green", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "esp:D19", "green", [ "v0" ] ],
+    [ "oled1:GND", "esp:GND.1", "black", [ "v-45.11", "h-135.6", "v146.07" ] ],
+    [ "oled1:VCC", "esp:3V3", "red", [ "h-60.81", "v110.46" ] ],
+    [ "oled1:SCL", "esp:D5", "green", [ "v-28.89", "h-126.67", "v74.18" ] ],
+    [ "oled1:SDA", "esp:D4", "green", [ "v-13.43", "h-124.14", "v82.68" ] ]
+  ],
+  "dependencies": {}
+}
